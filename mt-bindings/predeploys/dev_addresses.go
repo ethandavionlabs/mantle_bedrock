@@ -3,6 +3,8 @@ package predeploys
 import "github.com/ethereum/go-ethereum/common"
 
 const (
+	DevL1Bit = "0x6900000000000000000000000000000000000020"
+
 	DevL2OutputOracle             = "0x6900000000000000000000000000000000000000"
 	DevMantlePortal               = "0x6900000000000000000000000000000000000001"
 	DevL1CrossDomainMessenger     = "0x6900000000000000000000000000000000000002"
@@ -26,11 +28,14 @@ var (
 	DevWETH9Addr                      = common.HexToAddress(DevWETH9)
 	DevL1ERC721BridgeAddr             = common.HexToAddress(DevL1ERC721Bridge)
 	DevSystemConfigAddr               = common.HexToAddress(DevSystemConfig)
+	DevTestBitToken                   = common.HexToAddress(DevL1Bit)
 
 	DevPredeploys = make(map[string]*common.Address)
 )
 
 func init() {
+	DevPredeploys["L1BitAddress"] = &DevTestBitToken
+	DevPredeploys["TestBitToken"] = &DevTestBitToken
 	DevPredeploys["L2OutputOracle"] = &DevL2OutputOracleAddr
 	DevPredeploys["MantlePortal"] = &DevMantlePortalAddr
 	DevPredeploys["L1CrossDomainMessenger"] = &DevL1CrossDomainMessengerAddr

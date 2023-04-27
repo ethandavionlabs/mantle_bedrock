@@ -454,11 +454,20 @@ func NewL2StorageConfig(config *DeployConfig, block *types.Block) (state.Storage
 		"symbol":   "WETH",
 		"decimals": 18,
 	}
+	storage["TestBitToken"] = state.StorageValues{
+		"name":   "Bit Token",
+		"symbol": "BIT",
+	}
 	storage["GovernanceToken"] = state.StorageValues{
 		"_name":   config.GovernanceTokenName,
 		"_symbol": config.GovernanceTokenSymbol,
 		"_owner":  config.GovernanceTokenOwner,
 	}
+	storage["BVM_BIT"] = state.StorageValues{
+		"_name":   "Bit Token",
+		"_symbol": "BIT",
+	}
+
 	storage["ProxyAdmin"] = state.StorageValues{
 		"_owner": config.ProxyAdminOwner,
 	}
